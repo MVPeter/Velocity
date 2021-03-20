@@ -11,7 +11,7 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     user: 'root',
     password: process.env.PASSWORD,
-    database: 'eatburgers_db',
+    database: 'velocitydb',
   });
 };
 

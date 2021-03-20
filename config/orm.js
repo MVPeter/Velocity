@@ -1,6 +1,6 @@
 const connection = require('./connection.js');
 
-// Object Relational Mapper (ORM)
+
 
 const orm = {
     all(tableInput, cb) {
@@ -14,9 +14,7 @@ const orm = {
         );
     },
 
-    //Table is Burger
-    //cols1 is burger_name
-    //vals1 is new burger name
+
     create(table, cols1, vals1, cb) {
         const queryString = 'INSERT INTO ?? (??) VALUES (?)';
         connection.query(
@@ -30,8 +28,7 @@ const orm = {
             
     },
 
-    //objColVals is eaten status
-    //condition is ture/false
+ 
     updateEaten(objColVals, condition, cb) {
         let queryString = 'UPDATE burger SET eaten = ? WHERE id = ?';
         connection.query(queryString,
