@@ -1,5 +1,7 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
+const db = require('./models');
+
 // Requiring passport as we've configured it
 let passport = require("./config/passport");
 
