@@ -1,5 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
+const db = require('./models');
+
 // Requiring passport as we've configured it
 let passport = require("./config/passport");
 
@@ -28,6 +30,7 @@ app.use(passport.session());
 const routes = require('./controllers/controller.js');
 
 app.use(routes);
+db.sequelize.sync();
 
 // Start server
 db.sequelize.sync().then(function () {
