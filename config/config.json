@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "process.env.PASSWORD",
+    "password": "",
     "database": "velocitydb",
     "host": "127.0.0.1",
     "dialect": "mysql"
