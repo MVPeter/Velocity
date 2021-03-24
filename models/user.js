@@ -31,5 +31,8 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.hasMany(Date, {foreignKey: uid})
+  User.hasMany(Meals, {foreignKey: uid})
   return User;
 };
