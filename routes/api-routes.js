@@ -7,7 +7,7 @@ module.exports = (app) => {
     app.get('api/tasks', (req, res) => {
 
     });
-    app.get('api/calendar', (req, res) => {
+    app.get('api/meal', (req, res) => {
 
     });
 
@@ -35,7 +35,7 @@ module.exports = (app) => {
     app.post('api/tasks', (req, res) => {
 
     });
-    app.post('api/calendar', (req, res) => {
+    app.post('api/meal', (req, res) => {
 
     });
 
@@ -70,7 +70,7 @@ module.exports = (app) => {
     app.put('api/tasks', (req, res) => {
 
     });
-    app.put('api/calendar', (req, res) => {
+    app.put('api/meal', (req, res) => {
 
     });
 
@@ -78,7 +78,7 @@ module.exports = (app) => {
     app.delete('api/tasks', (req, res) => {
 
     });
-    app.delete('api/calendar', (req, res) => {
+    app.delete('api/meal', (req, res) => {
 
     });
 
