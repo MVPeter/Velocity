@@ -9,7 +9,7 @@ const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 const User = require("./User")
-const Tasks = require("./Tasks")
+const Task = require("./Task")
 const Meal = require("./Meal")
 
 

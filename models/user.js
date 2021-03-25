@@ -45,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
 
 
 User.associate = (models) => {
-  models.User.hasMany(models.Tasks, { foreignKey: "user_id" })
+  models.User.hasMany(models.Task, { foreignKey: "user_id" })
   models.User.hasMany(models.Meal, { foreignKey: "user_id" })
 }
   return User;
