@@ -1,5 +1,3 @@
-const Sequelize = require('sequelize')
-
 const {
     Model
 } = require('sequelize');
@@ -8,32 +6,17 @@ module.exports = (sequelize, DataTypes) => {
 
     };
     Meal.init({
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        // user_id:
-        // {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: "user",
-        //         key: "id"
-        //     }
-        // },
-        calorie:
-        {
-            type: DataTypes.INTEGER
-        },
-        serving:
-        {
-            type: DataTypes.DECIMAL(10, 2)
-        }, 
+        meal: DataTypes.STRING,
+        description: DataTypes.STRING,
+        serving_size: DataTypes.STRING,
+        // THESE WILL NEED TO BE DECIMAL
+        calories: DataTypes.DECIMAL(5,2),
+        carbs: DataTypes.DECIMAL(5,2),
+        fat: DataTypes.DECIMAL(5,2),
+        sodium: DataTypes.DECIMAL(5,2),
     },{
-    sequelize,
-    modelName: 'Meal',
-    }
-    )
-    return Meal;
+        sequelize,
+        modelName: 'Meal',
+    });
+    return Meal
 }
