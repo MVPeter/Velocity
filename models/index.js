@@ -8,6 +8,14 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
+const User = require("./User")
+const Tasks = require("./Tasks")
+const Meal = require("./Meal")
+
+
+// User.hasMany(Tasks, {foreignKey: "user_id"})
+// User.hasMany(Meal, {foreignKey: "user_id"})
+
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);

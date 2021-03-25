@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
         task_complete: DataTypes.BOOLEAN
     }, {
         sequelize,
-        modelName: 'Task',
-    });
+        modelName: 'Tasks',
+    }
+    );
     return Task;
 };

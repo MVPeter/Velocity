@@ -1,7 +1,17 @@
+// const Tasks = require("./Tasks")
+// const Meal = require("./Meal")
 // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
 const bcrypt = require("bcryptjs");
+// const { sequelize } = require("../../../../14-Reverse-Engineering-Code/DEV/Develop/models");
+// const { DataTypes } = require("sequelize/types");
+// const {Model} = require("sequelize");
+
+
+
 // Creating our User model
-module.exports = function(sequelize, DataTypes) {
+// const { Model 
+// } = require = (sequelize, DataTypes) => 
+module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
     email: {
@@ -17,9 +27,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
+
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-  User.prototype.validPassword = function(password) {
+  User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
@@ -32,7 +43,10 @@ module.exports = function(sequelize, DataTypes) {
     );
   });
 
-  User.hasMany(Date, {foreignKey: uid})
-  User.hasMany(Meals, {foreignKey: uid})
+
+User.associate = (models) => {
+  models.User.hasMany(models.Tasks, { foreignKey: "user_id" })
+  models.User.hasMany(models.Meal, { foreignKey: "user_id" })
+}
   return User;
 };
