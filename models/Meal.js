@@ -8,9 +8,11 @@ module.exports = (sequelize, DataTypes) => {
     Meal.init({
         dayOf: DataTypes.STRING,
         mealTime: DataTypes.STRING,
-    },{
+    },
+    {
         sequelize,
         modelName: 'Meal',
-    });
+    }
+);
     return Meal
 }
