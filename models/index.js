@@ -11,6 +11,7 @@ const db = {};
 const User = require("./User")
 const Task = require("./Task")
 const Meal = require("./Meal")
+const Food = require("./Food")
 
 
 // User.hasMany(Tasks, {foreignKey: "user_id"})
