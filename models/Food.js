@@ -17,11 +17,13 @@ module.exports = (sequelize, DataTypes) => {
         // THESE WILL NEED TO BE DECIMAL
         calories: DataTypes.DECIMAL(5,2),
         carbs: DataTypes.DECIMAL(5,2),
+        protein: DataTypes.DECIMAL(5,2),
         fat: DataTypes.DECIMAL(5,2),
         sodium: DataTypes.DECIMAL(5,2),
     }, {
         sequelize,
         modelName: 'Food',
+        timestamps: false,
     }
     );
     Food.associate = (models) => {
