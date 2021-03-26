@@ -12,7 +12,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/landing");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/login", (req, res) => {
