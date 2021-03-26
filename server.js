@@ -1,6 +1,7 @@
 const express = require('express');
-const session = require("express-session");
-// const mysql = require('mysql2');
+const session = require("express-session");6
+const exphbs = require('express-handlebars');
+const mysql = require('mysql2');
 const db = require('./models');
 
 // Requiring passport as we've configured it
@@ -16,7 +17,6 @@ app.use(express.static('public'));
 // Set up Express 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-const exphbs = require('express-handlebars');
 
 //Handlebars config
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -27,12 +27,12 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+// app.use(routes);
 // routes
 // const routes = require('./controllers/controller.js');
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-// app.use(routes);
 
 // Start server {force: true}
 db.sequelize.sync().then(function () {
