@@ -1,5 +1,6 @@
 const db = require('../models');
 const passport = require("../config/passport");
+const Food = require('../models/Food');
 
 //Routes
 module.exports = (app) => {
@@ -8,6 +9,12 @@ module.exports = (app) => {
 
     });
     app.get('api/meal', (req, res) => {
+
+    });
+    app.get('api/food', (req, res) => {
+        Food.findaALl().then(food => {
+            console.log("All Food: ", JSON.stringify(food, null, 4))
+        });
 
     });
 
