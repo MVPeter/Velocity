@@ -1,7 +1,7 @@
 const express = require('express');
-const session = require("express-session");
+const session = require("express-session");6
 const exphbs = require('express-handlebars');
-// const mysql = require('mysql2');
+const mysql = require('mysql2');
 const db = require('./models');
 
 // Requiring passport as we've configured it
