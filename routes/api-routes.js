@@ -32,10 +32,18 @@ module.exports = (app) => {
     });
 
     //POST
-    app.post('api/newTasks', (req, res) => {
-
+    app.post('/api/newTask', (req, res) => {
+        console.log(req.body);
+        db.Task.create({
+            task_name: req.body.task_name,
+            task_notes: req.body.task_notes,
+            dayOf: req.body.dayOf
+        })
+        .then((task) => {
+            res.json(task);
+        })
     });
-    app.post('api/newMeal', (req, res) => {
+    app.post('/api/newMeal', (req, res) => {
 
     });
 
