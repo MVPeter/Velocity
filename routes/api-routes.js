@@ -6,13 +6,15 @@ const Food = require('../models/Food');
 module.exports = (app) => {
     //GET
     app.get('api/tasks', (req, res) => {
+        Task.findAll({where: { dayOf: req.body.dayOf }});
+        console.log("Tasks for the Day of: ", JSON.stringify(task, null, 4));
 
     });
     app.get('api/meal', (req, res) => {
 
     });
     app.get('api/food', (req, res) => {
-        Food.findaALl().then(food => {
+        Food.findaAll().then(food => {
             console.log("All Food: ", JSON.stringify(food, null, 4))
         });
 
@@ -40,6 +42,14 @@ module.exports = (app) => {
 
     //POST
     app.post('api/newTasks', (req, res) => {
+        // let createTaskName = req.body.taskName.trim();
+        // let createTaskNotes = req.body.taskNotes;
+        // let createTaskDay = req.body.taskDay;
+        console.log(req.body);
+        db.Post.create({
+            
+        })
+
 
     });
     app.post('api/newMeal', (req, res) => {
