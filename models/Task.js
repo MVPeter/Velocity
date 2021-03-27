@@ -14,11 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     Task.init({
         task_name: DataTypes.STRING,
         task_notes: DataTypes.STRING,
-        task_complete: DataTypes.BOOLEAN
-    }, {
-        sequelize,
-        modelName: 'Task',
-    }
+        dayOf: DataTypes.STRING,
+        task_complete: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+    },
+        {
+            sequelize,
+            modelName: 'Task',
+        }
     );
     return Task;
 };

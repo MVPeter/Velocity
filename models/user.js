@@ -1,5 +1,4 @@
-// const Tasks = require("./Tasks")
-// const Meal = require("./Meal")
+
 // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
 const bcrypt = require("bcryptjs");
 // const { sequelize } = require("../../../../14-Reverse-Engineering-Code/DEV/Develop/models");

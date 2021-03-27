@@ -7,7 +7,7 @@ module.exports = (app) => {
     app.get('api/tasks', (req, res) => {
 
     });
-    app.get('api/calendar', (req, res) => {
+    app.get('api/meal', (req, res) => {
 
     });
 
@@ -32,10 +32,10 @@ module.exports = (app) => {
     });
 
     //POST
-    app.post('api/tasks', (req, res) => {
+    app.post('api/newTasks', (req, res) => {
 
     });
-    app.post('api/calendar', (req, res) => {
+    app.post('api/newMeal', (req, res) => {
 
     });
 
@@ -67,18 +67,18 @@ module.exports = (app) => {
     });
 
     //PUT
-    app.put('api/tasks', (req, res) => {
+    app.put('api/updateTasks', (req, res) => {
 
     });
-    app.put('api/calendar', (req, res) => {
+    app.put('api/updateMeal', (req, res) => {
 
     });
 
     //DELETE
-    app.delete('api/tasks', (req, res) => {
+    app.delete('api/delTasks', (req, res) => {
 
     });
-    app.delete('api/calendar', (req, res) => {
+    app.delete('api/delMeal', (req, res) => {
 
     });
 

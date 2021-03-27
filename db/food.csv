@@ -1,11 +1,11 @@
-﻿meal,description,servings size,calories,carbs,protein,fat,sodium
+meal,description,servings_size,calories,carbs,protein,fat,sodium
 Quick Oats,Quaker,1/2 cup dry,150,27,5,3,0
 Grits,Quaker Old Fashioned,1/4 cup,140,32,3,0.5,0
 Brown Rice Crisp Cereal,Barbara's,1 1/3 cup,160,35,3,1,125
 Whole Wheat Tortilla,Mission,1 tortilla,110,22,4,2,380
 Wheat Sandwich Thin,Orowheat,1 bun,140,28,6,2,300
-Cauliflower Rice,Birds Eye; About 3.5 servings per container,2/3 cup cooked,25,4,2,0,
-Long Grain Rice,Great Value,1/4 cup dry,160,36,3,0,
+Cauliflower Rice,Birds Eye; About 3.5 servings per container,2/3 cup cooked,25,4,2,0,0
+Long Grain Rice,Great Value,1/4 cup dry,160,36,3,0,0
 Couscous,Rice Select,1/4 cup dry,200,41,7,0.5,0
 Quinoa,White - Great Value,1/4 cup dry,170,29,6,2.5,0
 Triscuits,Balsamic Vinegar and Basil,6 crackers (28 g),120,20,3,3.5,120
@@ -34,9 +34,9 @@ Yellow Onion,Chopped,1 cup,64,14.9,1.8,0.2,6.4
 Roma Tomato,medium,1 medium,18,3.5,0.5,0.3,3
 Baked Potato,"large; baked, flesh, and skin",1 large (300 g),279,63.2,7.5,0.4,30
 Sugar Snap Peas,Walmart Organic,3 oz.,35,6,2,0,0
-Sweet Potatoe,Large; Baked,1 large,167,37.3,4,0.2,
+Sweet Potatoe,Large; Baked,1 large,167,37.3,4,0.2,0
 Spinach,Raw,1 cup,7,1.1,0.9,0.1,23.7
-Frozen Strawberries,Great Value,1 cup,50,13,1,0,
+Frozen Strawberries,Great Value,1 cup,50,13,1,0,0
 Peaches,Frozen,100 g,39,10,0.9,0.3,0
 Honey,Organic Raw - Kirkland/Great Value,1 Tbsp,60,17,0,0,0
 Ketchup,Great Value,1 Tbsp,20,5,0,0,160
@@ -44,7 +44,7 @@ Mustard,Heinz and Great Value,1 Tbsp,0,0,0,0,60
 Jalapeno Honey Mustard,Tagge's Famous Fruit and Veggie Farms,1 Tbsp,15,3,0,0,120
 Celery,1 medium stalk,1 medium,6,1.2,0.3,0.1,32
 Broccoli,Steamed,1 cup,31,6,2.6,0.3,30
-Frozen Broccoli,Frozen - Birds Eye',1 1/3 cup,30,4,1,0,
+Frozen Broccoli,Frozen - Birds Eye',1 1/3 cup,30,4,1,0,0
 Diced Green Chiles,Ortega; Mild; 7 oz.,2 tbsp,10,2,1,0,120
 Minced Garlic,Spice World; Preminced; 1/2 tsp approx. 1 clove fresh,1 tsp,5,1,0,0,0
 Green Chile Enchilada Sauce,Old El Paso - Mild,1/4 cup,25,4,0,1.5,280
@@ -65,7 +65,7 @@ Chicken Breast,4 oz.,4 oz.,124,0,26.1,1.4,73
 Stew Beef,Walmart,4 oz.,250,0,21,18,65
 Low Fat Ground Turkey,Foster Farms; 99% fat free,4 oz.,120,0,26,1.5,85
 5 oz. Canned Chicken,Food Club,2 oz.,60,0,12,1,230
-Spicy Guacamole,Wholly Guacamole,1 package,120,5,1,10,
+Spicy Guacamole,Wholly Guacamole,1 package,120,5,1,10,0
 Almond Butter,MaraNatha,2 Tbsp,190,7,7,16,60
 Jif Peanut Butter,Jif,2 Tbsp,190,8,7,16,80
 Peanut Butter,Adams,2 Tbsp,190,7,8,16,80
@@ -86,9 +86,9 @@ Feta Cheese,Frigo,1/4 cup (28 g),80,1,5,6,320
 Goat Cheese,Simple Truth Organic,1 oz.,80,0,5,6,80
 String Cheese,Galbani,1 pack,80,0,7,6,170
 Cottage Cheese,2% milk fat; Viva,1/2 cup (113 g),90,4,13,2,420
-Pinto Beans,Bush's,1/2 cup,100,18,6,0,
+Pinto Beans,Bush's,1/2 cup,100,18,6,0,0
 Low Sodium Black Beans,Great Value; No Salt Added,1/2 cup,120,22,7,0.5,10
-Black Beans,Kroger,1/2 cup,110,18,6,0,
+Black Beans,Kroger,1/2 cup,110,18,6,0,0
 Great Northern Beans,Macy's; Food Clup,1/2 cup,110,19,7,0,300
 Garbanzo Beans,S and W - Low Sodium,1/2 cup,120,20,7,2,140
 Avocado,medium,1 medium,240,12.8,3,22,10.5
@@ -123,7 +123,7 @@ Thyme Cheeseburger Breakfast Casserole,Fit Men Cook; Disliked,1/4 recipe,364,22,
 Vegan Blender Bites,Fit Men Cook,6 bites,275,41,10,12,308
 Banana Berry Protein Crisp,Fit Men Cook,1/5 recipe,304,58,7,7,27
 Juicy AF Moroccan Chicken,Fit Men Cook,1/4 recipe,224,3,31,9,170
-Roasted Red Pepper Hummus,Fit Men Cook; Makes approx. 10 servings; liked,1/4 cup,173,13,4,13,
+Roasted Red Pepper Hummus,Fit Men Cook; Makes approx. 10 servings; liked,1/4 cup,173,13,4,13,0
 Greek Turkey Burgers,Fit Men Cook,1/5 recipe,264,3,28,16,354
 Sweet 'n' Spicy Mustard Chicken,Fit Men Cook,1/4 recipe,274,11,37,8,397
 Cashew Chicken and Asparagus,Fit Men Cook,1/6 recipe,301,16,29,14,582
@@ -182,19 +182,19 @@ BBQ Chicken Crust Pizza,Fit Men Cook and Cookbook,1/5 recipe,250.2,9.2,34,7.4,53
 Chicken Crust Pizza,Fit Men Cook,1/5 recipe,220,3,32,8,305
 Pesto Tatas,Fit Men Cook,1/6 recipe,170,25,3,7,28
 Sweet Potato Whip,Fit Men Cook,3/4 cup (1/6 recipe),112,21,2,1,45
-Bacon-Fried Brussels Sprouts,Fit Men Cook,1 cup,115,12,6,6,
+Bacon-Fried Brussels Sprouts,Fit Men Cook,1 cup,115,12,6,6,0
 PPC,Fit Men Cook,1/5 recipe,225,38,7,6,29
 Loaded Herbed Cauliflower Mash,Fit Men Cook,2/3 cup (1/3 recipe),80,9,7,3,206
 Avocado Potato Salad,Fit Men Cook,1/5 recipe,152,24,4,5,57
-Cranberry Sweet Potato Protein Mini Muffins,Fit Men Cook,1 muffin,48,7,1,2,
+Cranberry Sweet Potato Protein Mini Muffins,Fit Men Cook,1 muffin,48,7,1,2,0
 Indian-Inspired Couscous,Fit Men Cook,1/5 recipe,205,32,6,6,12
 Cheesy Curry Chips,Fit Men Cook,8 chips,230,20,7,6,439
 Crispy Red Potato Wedges,Fit Men Cook,1/6 recipe,125,19,2,5,409
 Crispy Red Potato Wedges (1/4 recipe),Fit Men Cook,1/4 recipe,187.5,28.5,3,7.5,613.5
-Texas Breakfast Casserole,Fit Men Cook App,1/6 recipe,374,12,34,20,
-High-Protein Breakfast Casserole,Fit Men Cook App,1/6 recipe,329,15,34,13,
-Healthy Pumpkin Protein Waffles,Fit Men Cook App,1 waffle (1/8 recipe),122,13,10,3,
-Chopped Chicken Salad Wrap,Fit Men Cook App,1 wrap,529,52,55,14,
-Mexican-Inspired Fried Rice,Fit Men Cook App,1/4 recipe,512,44,47,15,
-Pineapple Chicken Fried Rice with Turmeric,Fit Men Cook App,1/4 recipe,382,42,36,8,
-15-Minute Pineapple Pepper Chicken,Fit Men Cook App,1/4 recipe,213,13,27,5,
+Texas Breakfast Casserole,Fit Men Cook App,1/6 recipe,374,12,34,20,0
+High-Protein Breakfast Casserole,Fit Men Cook App,1/6 recipe,329,15,34,13,0
+Healthy Pumpkin Protein Waffles,Fit Men Cook App,1 waffle (1/8 recipe),122,13,10,3,0
+Chopped Chicken Salad Wrap,Fit Men Cook App,1 wrap,529,52,55,14,0
+Mexican-Inspired Fried Rice,Fit Men Cook App,1/4 recipe,512,44,47,15,0
+Pineapple Chicken Fried Rice with Turmeric,Fit Men Cook App,1/4 recipe,382,42,36,8,0
+15-Minute Pineapple Pepper Chicken,Fit Men Cook App,1/4 recipe,213,13,27,5,0
