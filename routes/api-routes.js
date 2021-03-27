@@ -1,20 +1,25 @@
 const db = require('../models');
 const passport = require("../config/passport");
-const Food = require('../models/Food');
+// const Food = require('../models/Food');
 
 //Routes
 module.exports = (app) => {
     //GET
-    app.get('api/tasks', (req, res) => {
-        Task.findAll({where: { dayOf: req.body.dayOf }});
-        console.log("Tasks for the Day of: ", JSON.stringify(task, null, 4));
+    // app.get('/api/tasks', (req, res) => {
+    //     db.Task.findAll({ })
+    //         .then((tasks) => {
+    //             console.log(typeof tasks)
+    //             res.json(tasks)
+    //             // console.log("Tasks for the Day of: ", JSON.stringify(task, null, 4));
+
+    //         });
+    // });
+
+    app.get('/api/meal', (req, res) => {
 
     });
-    app.get('api/meal', (req, res) => {
-
-    });
-    app.get('api/food', (req, res) => {
-        Food.findaAll().then(food => {
+    app.get('/api/food', (req, res) => {
+        db.Food.findaAll().then(food => {
             console.log("All Food: ", JSON.stringify(food, null, 4))
         });
 
@@ -41,18 +46,18 @@ module.exports = (app) => {
     });
 
     //POST
-    app.post('api/newTasks', (req, res) => {
-        // let createTaskName = req.body.taskName.trim();
-        // let createTaskNotes = req.body.taskNotes;
-        // let createTaskDay = req.body.taskDay;
+    app.post('/api/newTask', (req, res) => {
         console.log(req.body);
-        db.Post.create({
-            
+        db.Task.create({
+            task_name: req.body.task_name,
+            task_notes: req.body.task_notes,
+            dayOf: req.body.dayOf
         })
-
-
+            .then((task) => {
+                res.json(task);
+            })
     });
-    app.post('api/newMeal', (req, res) => {
+    app.post('/api/newMeal', (req, res) => {
 
     });
 
@@ -84,10 +89,10 @@ module.exports = (app) => {
     });
 
     //PUT
-    app.put('api/updateTasks', (req, res) => {
+    app.put('/api/updateTasks', (req, res) => {
 
     });
-    app.put('api/updateMeal', (req, res) => {
+    app.put('/api/updateMeal', (req, res) => {
 
     });
 

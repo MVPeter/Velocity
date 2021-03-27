@@ -1,57 +1,75 @@
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="../index.html">Velocity</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="">Calendar</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="">Task List</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="" target="_blank">Shopping List</a>
-                </li>
-            </ul>
-            </div>
-          </nav>
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <h1 class="display-4">Task List</h1>
-                  <div>
-                    <div class="form-group">
-                    <input id="task-name" class="form-control" placeholder="Note Title" type="text">
-                    <textarea id="task-text" class="form-control" placeholder="Note Text"></textarea>
-                      <select class="custom-select" id="task-day">
-                        <option selected disabled value="">Task Day</option>
-                        <option>Monday</option>
-                        <option>Tuesday</option>
-                        <option>Wednesday</option>
-                        <option>Thursday</option>
-                        <option>Friday</option>
-                        <option>Saturday</option>
-                        <option>Sunday</option>
-                      </select>
-                    </div>
-                    <button type="button" class="btn btn-outline-secondary" id="addTaskBtn">Add Task</button>
-                  </div>
-                  <div>
-                      <h2>Tasks To Do</h2>
-                      <ul id="tasks" style="list-style-type:none;">
-                      </ul>
-
-                      <h2>Completed Tasks</h2>
-
-                      <ul id="completed-tasks">
-                      </ul>
-                  </div>
-                </div>
-              </div>
-            
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="../index.html">Velocity</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="">Calendar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Task List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" target="_blank">Shopping List</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="display-4">Task List</h1>
+        <div>
+          <div class="form-group">
+            <input id="task-name" class="form-control" data-taskName="taskName" placeholder="Task Title" type="text">
+            <textarea id="task-text" class="form-control" placeholder="Task Text"></textarea>
+            <select class="custom-select" id="task-day">
+              <option selected disabled value="">Task Day</option>
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+              <option>Sunday</option>
+            </select>
           </div>
-      
+          <button type="button" class="btn btn-outline-secondary" id="addTaskBtn">Add Task</button>
+        </div>
+        <div>
+          <div class="row">
+            <h2>Tasks To Do</h2>
+            {{!-- <ul id="tasks" style="list-style-type:none;">
+            </ul> --}}
+
+            <ul>
+              {{#each task}}
+              {{#unless task_complete}}
+              {{> taskstatus/taskstatus task_complete=false}}
+              {{/unless}}
+              {{/each}}
+            </ul>
+
+            <h2>Completed Tasks</h2>
+
+            <ul>
+              {{#each task}}
+              {{#if task_complete}}
+              {{> taskstatus/taskstatus task_complete=true}}
+              {{/if}}
+              {{/each}}
+            </ul>
+
+            {{!-- <ul id="completed-tasks">
+            </ul> --}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
