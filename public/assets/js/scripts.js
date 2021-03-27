@@ -1,6 +1,21 @@
+// const { response } = require("express");
+
 let addTaskButton = document.getElementById("addTaskBtn");
 let taskNameEl = document.getElementById("task-name");
 let taskTextEl = document.getElementById("task-text");
+
+// $(document).ready(() => {
+//     $.get("/api/tasks").then(data => {
+//         const tasksObject = {
+//             tasks: data,
+//         };
+//         console.log(tasksObject);
+//         // res.render('index', tasksObject);
+//     })
+
+
+// })
+
 
 function submitTask(){
     // This will need to be changed to a post to store the task to the db

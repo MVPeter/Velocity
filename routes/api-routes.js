@@ -1,13 +1,27 @@
 const db = require('../models');
 const passport = require("../config/passport");
+// const Food = require('../models/Food');
 
 //Routes
 module.exports = (app) => {
     //GET
-    app.get('api/tasks', (req, res) => {
+    // app.get('/api/tasks', (req, res) => {
+    //     db.Task.findAll({ })
+    //         .then((tasks) => {
+    //             console.log(typeof tasks)
+    //             res.json(tasks)
+    //             // console.log("Tasks for the Day of: ", JSON.stringify(task, null, 4));
+
+    //         });
+    // });
+
+    app.get('/api/meal', (req, res) => {
 
     });
-    app.get('api/meal', (req, res) => {
+    app.get('/api/food', (req, res) => {
+        db.Food.findaAll().then(food => {
+            console.log("All Food: ", JSON.stringify(food, null, 4))
+        });
 
     });
 
@@ -39,9 +53,9 @@ module.exports = (app) => {
             task_notes: req.body.task_notes,
             dayOf: req.body.dayOf
         })
-        .then((task) => {
-            res.json(task);
-        })
+            .then((task) => {
+                res.json(task);
+            })
     });
     app.post('/api/newMeal', (req, res) => {
 
@@ -75,10 +89,10 @@ module.exports = (app) => {
     });
 
     //PUT
-    app.put('api/updateTasks', (req, res) => {
+    app.put('/api/updateTasks', (req, res) => {
 
     });
-    app.put('api/updateMeal', (req, res) => {
+    app.put('/api/updateMeal', (req, res) => {
 
     });
 

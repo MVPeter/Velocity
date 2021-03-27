@@ -29,17 +29,19 @@ module.exports = function(app) {
 //   app.get("/members", isAuthenticated, (req, res) => {
 //     res.sendFile(path.join(__dirname, "../public/members.html"));
 //   });
-  app.get("/landing", isAuthenticated, (req, res) => {
+  app.get("/landing", isAuthenticated, async (req, res) => {
       
-      db.Task.findAll({}).then((dbtask) => {
-          // res.json(dbtask)
-          console.log(dbtask);
-          let dbtaskObject = {
-              task: dbtask
-          }
-          console.log(dbtaskObject);
-          res.render('index')
-        });
-
+      // db.Task.findAll({}).then((dbtask) => {
+      //     // res.json(dbtask)
+      //     // console.log(dbtask);
+      //     let dbtaskObject = {
+      //         task: dbtask
+      //     }
+      //     console.log("routes object " + dbtaskObject);
+      //   });
+      let dbtaskObject = await db.Task.findAll({});
+      console.log(dbtaskObject);
+        
+      res.render('index', dbtaskObject);
   })
 };
