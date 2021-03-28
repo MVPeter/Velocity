@@ -4,6 +4,10 @@ let addTaskButton = document.getElementById("addTaskBtn");
 let taskNameEl = document.getElementById("task-name");
 let taskTextEl = document.getElementById("task-text");
 
+let addFoodButton = document.getElementById('addFoodBtn');
+let mealTypeEl = document.getElementById('meal-type');
+let foodEl = document.getElementById('food');
+
 // $(document).ready(() => {
 //     $.get("/api/tasks").then(data => {
 //         const tasksObject = {
@@ -18,11 +22,12 @@ let taskTextEl = document.getElementById("task-text");
 
 
 function submitTask(){
-    // This will need to be changed to a post to store the task to the db
+    // Task values entered by user
     let newTaskName = taskNameEl.value;
     let newTaskText = taskTextEl.value;
-    // Hard code day. This will need to grab the day dropdown.
+    // Hard code day. This will need to grab the day dropdown
     let newTaskDay = 'Monday'
+    // Alert user if inputs are left blank
     if (!newTaskName || !newTaskText) {
         alert('Your task is missing some content.');
     }
@@ -54,6 +59,26 @@ function submitTask(){
     taskNameEl.value = "";
     taskTextEl.value = "";
 }
+function submitMeal() {
+    // Task values entered by user
+     let newMealType = 'Lunch';
+     let newFood = 'Apple';
+     // Hard code day. This will need to grab the day dropdown.
+     let newTaskDay = 'Monday';
+    //  Change this
+     if (!newMealType || !newFood) {
+         alert('Your task is missing some content.');
+     }
+     // Create a newMeal object to send off to the backend
+     const newTask = {
+         task_name: newTaskName.trim(),
+         task_notes: newTaskText.trim(),
+         dayOf: newTaskDay.trim(),
+     }
+     console.log('submitTask -> newTask', newTask);
+     postTask(newTask);
+
+}
 const postTask = (task) => {
     console.log(task);
     fetch('/api/newTask', {
@@ -71,4 +96,5 @@ const postTask = (task) => {
         console.error('Error:', error)
     });
 };
-addTaskButton.onclick = submitTask; 
+addTaskButton.onclick = submitTask;
+addFoodButton.onclick = submitMeal; 
