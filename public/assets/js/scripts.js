@@ -20,6 +20,12 @@ $(document).ready(() => {
 
     }
 
+    $.get("/api/user_data").then(data => {
+        console.log(data.email);
+        console.log("user_id:  " + data.id)
+      });
+    
+
 
 })
 
