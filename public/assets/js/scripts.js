@@ -1,3 +1,4 @@
+
 // Task list HTML elements
 let addTaskButton = document.getElementById('addTaskBtn');
 let taskNameEl = document.getElementById('task-name');
@@ -8,6 +9,7 @@ let addFoodButton = document.getElementById('addFoodBtn');
 let mealTypeEl = document.getElementById('meal-type');
 let foodEl = document.getElementById('food');
 let mealDayEl = document.getElementById('meal-day')
+
 
 // $(document).ready(() => {
 //     $.get("/api/tasks").then(data => {
