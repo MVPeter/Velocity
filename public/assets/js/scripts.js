@@ -31,6 +31,14 @@ $(document).ready(() => {
                 console.log(data);
             })
     }
+
+    $.get("/api/user_data").then(data => {
+        console.log(data.email);
+        console.log("user_id:  " + data.id)
+      });
+    
+
+
 })
 
 function submitTask() {
