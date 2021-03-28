@@ -39,20 +39,31 @@ module.exports = (app) => {
         }
     });
 
-    //POST
+    //POST newTask
     app.post('/api/newTask', (req, res) => {
         console.log(req.body);
         db.Task.create({
             task_name: req.body.task_name,
             task_notes: req.body.task_notes,
-            dayOf: req.body.dayOf
+            dayOf: req.body.dayOf,
+            user_id: req.body.user_id
         })
             .then((task) => {
                 res.json(task);
             })
     });
+    //POST newMeal
     app.post('/api/newMeal', (req, res) => {
-
+        console.log(req.body);
+        db.Meal.create({
+            dayOf: req.body.dayOf,
+            mealTime: req.body.mealTime,
+            food_id: req.body.food_id,
+            user_id: req.body.user_id
+        })
+            .then((task) => {
+                res.json(task);
+            })
     });
 
     // Using the passport.authenticate middleware with our local strategy.
