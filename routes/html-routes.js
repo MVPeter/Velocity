@@ -33,17 +33,13 @@ module.exports = function (app) {
 
   app.get("/landing", isAuthenticated, (req, res) => {
 
-    db.Task.findAll({}).then((task) => {
+    db.Task.findAll({ where: { dayOf:} }).then((task) => {
       res.render('index', {
         tasks: task
       })
     });
   })
   // app.get("/landing", isAuthenticated, async (req, res) => {
-
-
-
-
   //   try {
   //     await db.Task.findAll().then((task) => {
   //       // res.json(dbtask)
@@ -51,7 +47,6 @@ module.exports = function (app) {
   //       let dbtaskObject = {
   //         task: task
   //       }
-
   //       // console.log("routes object " + JSON.stringify(dbtaskObject.task[0]));
   //       // console.log("routes object " + JSON.stringify(dbtask[0]))
   //       res.render('index', {
@@ -61,8 +56,7 @@ module.exports = function (app) {
   //   } catch (error) {
   //     console.log(error)
   //   }
-
-
-
   // })
+
+
 };

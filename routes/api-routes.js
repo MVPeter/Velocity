@@ -5,15 +5,7 @@ const passport = require("../config/passport");
 //Routes
 module.exports = (app) => {
     //GET
-    // app.get('/api/tasks', (req, res) => {
-    //     db.Task.findAll({ })
-    //         .then((tasks) => {
-    //             console.log(typeof tasks)
-    //             res.json(tasks)
-    //             // console.log("Tasks for the Day of: ", JSON.stringify(task, null, 4));
-
-    //         });
-    // });
+    
 
     app.get('/api/meal', (req, res) => {
 
@@ -21,6 +13,8 @@ module.exports = (app) => {
     app.get('/api/food', (req, res) => {
         db.Food.findaAll().then(food => {
             console.log("All Food: ", JSON.stringify(food, null, 4))
+        }).then((dbFood) => {
+            res.json(dbFood);
         });
 
     });

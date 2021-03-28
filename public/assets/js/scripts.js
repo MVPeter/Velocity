@@ -1,23 +1,31 @@
 // const { response } = require("express");
 
+const { response } = require("express");
+
 let addTaskButton = document.getElementById("addTaskBtn");
 let taskNameEl = document.getElementById("task-name");
 let taskTextEl = document.getElementById("task-text");
 
-// $(document).ready(() => {
-//     $.get("/api/tasks").then(data => {
-//         const tasksObject = {
-//             tasks: data,
-//         };
-//         console.log(tasksObject);
-//         // res.render('index', tasksObject);
-//     })
+$(document).ready(() => {
+    const getFoodData = () => {
+        fetch("/api/food", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((response) => response.JSON())
+            .then((data) => {
+                console.log(data);
+
+            })
+
+    }
 
 
-// })
+})
 
 
-function submitTask(){
+function submitTask() {
     // This will need to be changed to a post to store the task to the db
     let newTaskName = taskNameEl.value;
     let newTaskText = taskTextEl.value;
@@ -58,17 +66,17 @@ const postTask = (task) => {
     console.log(task);
     fetch('/api/newTask', {
         method: 'POST',
-        headers:{
+        headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(task),
     })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log('Success in submitting task:', data)
-    })
-    .catch((error) => {
-        console.error('Error:', error)
-    });
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success in submitting task:', data)
+        })
+        .catch((error) => {
+            console.error('Error:', error)
+        });
 };
-addTaskButton.onclick = submitTask; 
+addTaskButton.onclick = submitTask;
