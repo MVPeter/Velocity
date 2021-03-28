@@ -33,7 +33,9 @@ module.exports = function (app) {
 
   app.get("/landing", isAuthenticated, (req, res) => {
 
+
     db.Task.findAll({ where: {dayOf: "Monday"} }).then((task) => {
+
       res.render('index', {
         tasks: task
       })
