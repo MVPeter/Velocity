@@ -1,6 +1,5 @@
 // const { response } = require("express");
 
-const { response } = require("express");
 
 let addTaskButton = document.getElementById("addTaskBtn");
 let taskNameEl = document.getElementById("task-name");
