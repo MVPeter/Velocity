@@ -1,6 +1,6 @@
 <li>
-    {{id}}. {{task_name}}: {{task_notes}}
-    <button data-id="{{id}}" data-complete="{{task_complete}}" class="button">
-        Complete
+    <p>{{id}}. {{task_name}}     Note: {{task_notes}}</p>
+    <button data-id="{{id}}" data-taskcomplete="{{task_complete}}" class="taskbutton">
+       {{#if task_complete}} Undo {{else}} Complete {{/if}}
     </button>
 </li>

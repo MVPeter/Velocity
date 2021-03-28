@@ -2,3 +2,9 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.taskbutton {
+  font-size: 5px;
+  background-color: rgb(255, 145, 0);
+  border-radius: 12px;
+}

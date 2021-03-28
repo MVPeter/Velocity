@@ -1,5 +1,7 @@
 // const { response } = require("express");
 
+const { response } = require("express");
+
 let addTaskButton = document.getElementById("addTaskBtn");
 let taskNameEl = document.getElementById("task-name");
 let taskTextEl = document.getElementById("task-text");
@@ -16,10 +18,21 @@ let foodEl = document.getElementById('food');
 //         console.log(tasksObject);
 //         // res.render('index', tasksObject);
 //     })
+$(document).ready(() => {
+    const getFoodData = () => {
+        fetch("/api/food", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((response) => response.JSON())
+            .then((data) => {
+                console.log(data);
 
+            })
 
-// })
-
+    }
+})
 
 function submitTask(){
     // Task values entered by user
@@ -83,18 +96,18 @@ const postTask = (task) => {
     console.log(task);
     fetch('/api/newTask', {
         method: 'POST',
-        headers:{
+        headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(task),
     })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log('Success in submitting task:', data)
-    })
-    .catch((error) => {
-        console.error('Error:', error)
-    });
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success in submitting task:', data)
+        })
+        .catch((error) => {
+            console.error('Error:', error)
+        });
 };
 addTaskButton.onclick = submitTask;
 addFoodButton.onclick = submitMeal; 
