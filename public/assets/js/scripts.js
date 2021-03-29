@@ -80,6 +80,24 @@ function submitTask() {
     taskNameEl.value = "";
     taskTextEl.value = "";
 }
+
+$(".taskbutton").on("click", function(event) {
+    event.preventDefault()
+    let buttonId = $(this).data("id")
+    let taskStatus = $(this).data("taskcomplete")
+    console.log(buttonId + "   " + taskStatus)
+    $.ajax("/api/completetask/" + buttonId, {
+        type: "PUT",
+        data: {"task_complete": taskStatus}
+    }).then(
+        () => {
+            console.log("completed")
+            // location.reload()
+        }
+    )
+})
+
+
 function submitMeal() {
     let submitType = 'newMeal';
     // Task values entered by user
