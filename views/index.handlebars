@@ -44,37 +44,41 @@
           <div class="container">
             <div class="row">
               <h2>Tasks To Do</h2>
+            </div>
               {{!-- <ul id="tasks" style="list-style-type:none;">
               </ul> --}}
-
-              <ul>
-                {{#each tasks}}
-                {{#dataValues}}
-                {{#unless task_complete}}
-                {{> taskstatus/taskstatus task_complete=false}}
-                {{/unless}}
-                {{/dataValues}}
-                {{/each}}
-              </ul>
-
               <div class="row">
-                <h2>Completed Tasks</h2>
-
                 <ul>
                   {{#each tasks}}
                   {{#dataValues}}
-                  {{#if task_complete}}
-                  {{> taskstatus/taskstatus task_complete=true}}
-                  {{/if}}
+                  {{#unless task_complete}}
+                  {{> taskstatus/taskstatus task_complete=false}}
+                  {{/unless}}
                   {{/dataValues}}
                   {{/each}}
                 </ul>
 
               </div>
 
+              <div class="row">
+                <h2>Completed Tasks</h2>
+              </div>
+                <div class="row">
+                  <ul>
+                    {{#each tasks}}
+                    {{#dataValues}}
+                    {{#if task_complete}}
+                    {{> taskstatus/taskstatus task_complete=true}}
+                    {{/if}}
+                    {{/dataValues}}
+                    {{/each}}
+                  </ul>
+
+                </div>
+
+
               {{!-- <ul id="completed-tasks">
               </ul> --}}
-            </div>
 
           </div>
         </div>

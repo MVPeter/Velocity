@@ -92,7 +92,7 @@ $(".taskbutton").on("click", function(event) {
     }).then(
         () => {
             console.log("completed")
-            // location.reload()
+            location.reload()
         }
     )
 })
