@@ -5,7 +5,7 @@ const passport = require("../config/passport");
 //Routes
 module.exports = (app) => {
     //GET
-    
+
 
     app.get('/api/meal', (req, res) => {
 
@@ -100,6 +100,22 @@ module.exports = (app) => {
     app.put('/api/updateMeal', (req, res) => {
 
     });
+
+    app.put('/api/completetask/:id', (req, res) => {
+        console.log(req.body.task_complete)
+        let status = "";
+        if (req.body.task_complete === "false") {
+            status = true;
+        } else {
+            status = false;
+        }
+        db.Task.update(
+            {task_complete: status},
+            {where: 
+            {id: req.params.id},
+        }
+        ).then((dbTask) => res.json(dbTask))
+    })
 
     //DELETE
     app.delete('api/delTasks', (req, res) => {

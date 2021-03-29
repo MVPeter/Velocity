@@ -41,35 +41,41 @@
           <button type="button" class="btn btn-outline-secondary" id="addTaskBtn">Add Task</button>
         </div>
         <div>
-          <div class="row">
-            <h2>Tasks To Do</h2>
-            {{!-- <ul id="tasks" style="list-style-type:none;">
-            </ul> --}}
+          <div class="container">
+            <div class="row">
+              <h2>Tasks To Do</h2>
+              {{!-- <ul id="tasks" style="list-style-type:none;">
+              </ul> --}}
 
-            <ul>
-              {{#each tasks}}
-              {{#dataValues}}
-              {{#unless task_complete}}
-              {{> taskstatus/taskstatus task_complete=false}}
-              {{/unless}}
-              {{/dataValues}}
-              {{/each}}
-            </ul>
+              <ul>
+                {{#each tasks}}
+                {{#dataValues}}
+                {{#unless task_complete}}
+                {{> taskstatus/taskstatus task_complete=false}}
+                {{/unless}}
+                {{/dataValues}}
+                {{/each}}
+              </ul>
 
-            <h2>Completed Tasks</h2>
+              <div class="row">
+                <h2>Completed Tasks</h2>
 
-            <ul>
-              {{#each tasks}}
-              {{#dataValues}}
-              {{#if task_complete}}
-              {{> taskstatus/taskstatus task_complete=true}}
-              {{/if}}
-              {{/dataValues}}
-              {{/each}}
-            </ul>
+                <ul>
+                  {{#each tasks}}
+                  {{#dataValues}}
+                  {{#if task_complete}}
+                  {{> taskstatus/taskstatus task_complete=true}}
+                  {{/if}}
+                  {{/dataValues}}
+                  {{/each}}
+                </ul>
 
-            {{!-- <ul id="completed-tasks">
-            </ul> --}}
+              </div>
+
+              {{!-- <ul id="completed-tasks">
+              </ul> --}}
+            </div>
+
           </div>
         </div>
       </div>
