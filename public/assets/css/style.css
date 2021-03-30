@@ -8,3 +8,14 @@ form.login {
   background-color: rgb(255, 145, 0);
   border-radius: 12px;
 }
+
+.vel-text {
+  font-family: Roboto;
+  color: #526997;
+  font-weight: bold;
+}
+
+.vel-button {
+  background-color: #135e58;
+  color: white;
+}
