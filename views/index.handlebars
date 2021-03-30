@@ -67,9 +67,13 @@
                 <ul>
                   {{#each tasks}}
                   {{#dataValues}}
-                  {{#unless task_complete}}
+                  {{#Tasks}} 
+                  {{#each task}}
+                  {{#unless Tasks.task_complete}}
                   {{> taskstatus/taskstatus task_complete=false}}
                   {{/unless}}
+                  {{/each}}
+                  {{/Tasks}}
                   {{/dataValues}}
                   {{/each}}
                 </ul>
