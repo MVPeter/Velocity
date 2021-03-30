@@ -40,38 +40,46 @@ module.exports = function (app) {
     // console.log(currentUserId);
     console.log(isAuthenticated);
     console.log(req.user);
-    db.Task.findAll({ where: { user_id: req.user.id } }).then((task) => {
+    // db.Task.findAll({ where: { user_id: req.user.id } }).then((task) => {
 
-      res.render('index', {
-        tasks: task
-      })
-      console.log(task);
-
-    });
-    // db.User.findAll({
-    //   include: [
-    //     {
-    //       model: db.Task,
-    //       where: { user_id: req.user.id },
-    //     },
-    //     {
-    //       model: db.Meal,
-    //       include: [
-    //         {
-    //           model: db.Food,
-    //         }
-    //       ],
-    //       where: { user_id: req.user.id },
-    //     },
-    //   ],
-    // }).then((user) => {
-    //   let dbData = JSON.parse(JSON.stringify(user))
-    //   // let dbDataObject = json(dbData)
-    //   console.log("This is DB data: " + dbData);
     //   res.render('index', {
-    //     user: dbData
-
+    //     tasks: task
     //   })
+    //   console.log(task);
+
+    // });
+    db.User.findAll({
+      where: { id: req.user.id },
+      include: [
+        {
+          model: db.Task,
+          // where: { user_id: req.user.id },
+        },
+        {
+          model: db.Meal,
+          include: [
+            {
+              model: db.Food,
+            }
+          ],
+        },
+      ],
+    }).then((user) => {
+      // let dbData = JSON.parse(JSON.stringify(user))
+      // let dbDataObject = json(dbData)
+    //  let dbUserObject = {
+    //   userDbObject: user
+    // };
+    // console.log("This is DB data: " + dbUserObject);
+    
+    res.render("index", {tasks : user});
+    console.log(user)
+    
+  })
+      // res.render('index', {
+      //   user: dbData
+
+      // })
 
     // });
   })
