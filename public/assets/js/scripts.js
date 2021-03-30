@@ -9,6 +9,7 @@ let addFoodButton = document.getElementById('addFoodBtn');
 let mealTypeEl = document.getElementById('meal-type');
 let foodEl = document.getElementById('food');
 let mealDayEl = document.getElementById('meal-day')
+let currentUserId = ""
 
 
 // $(document).ready(() => {
@@ -35,6 +36,7 @@ $(document).ready(() => {
     $.get("/api/user_data").then(data => {
         console.log(data.email);
         console.log("user_id:  " + data.id)
+        currentUserId = data.id
       });
     
 
@@ -56,7 +58,7 @@ function submitTask() {
         task_name: newTaskName.trim(),
         task_notes: newTaskText.trim(),
         dayOf: newTaskDay.trim(),
-        user_id: 1
+        user_id: currentUserId
     }
     console.log('submitTask -> newTask', newTask);
     submitPost(newTask, submitType);
@@ -79,6 +81,7 @@ function submitTask() {
 
     taskNameEl.value = "";
     taskTextEl.value = "";
+    location.reload()
 }
 
 $(".taskbutton").on("click", function(event) {
