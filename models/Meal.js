@@ -13,6 +13,12 @@ module.exports = (sequelize, DataTypes) => {
         sequelize,
         modelName: 'Meal',
     }
+    
 );
+Meal.associate = (models) => {
+    models.Meal.belongsTo(models.User, { foreignKey: "user_id" })
+    models.Meal.belongsTo(models.Food, {foreignKey: "food_id"})
+    
+  }
     return Meal
 }

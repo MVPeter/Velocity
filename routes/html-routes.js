@@ -6,6 +6,7 @@ const Handlebars = require('handlebars');
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const { response } = require("express");
 // const { DataTypes } = require("sequelize/types");
 
 module.exports = function (app) {
@@ -39,31 +40,42 @@ module.exports = function (app) {
     // console.log(currentUserId);
     console.log(isAuthenticated);
     console.log(req.user);
-    db.Task.findAll({where: {user_id: req.user.id}}).then((task) => {
-      
+    db.Task.findAll({ where: { user_id: req.user.id } }).then((task) => {
+
       res.render('index', {
         tasks: task
       })
+      console.log(task);
+
     });
+    // db.User.findAll({
+    //   include: [
+    //     {
+    //       model: db.Task,
+    //       where: { user_id: req.user.id },
+    //     },
+    //     {
+    //       model: db.Meal,
+    //       include: [
+    //         {
+    //           model: db.Food,
+    //         }
+    //       ],
+    //       where: { user_id: req.user.id },
+    //     },
+    //   ],
+    // }).then((user) => {
+    //   let dbData = JSON.parse(JSON.stringify(user))
+    //   // let dbDataObject = json(dbData)
+    //   console.log("This is DB data: " + dbData);
+    //   res.render('index', {
+    //     user: dbData
+
+    //   })
+
+    // });
   })
-  // app.get("/landing", isAuthenticated, async (req, res) => {
-  //   try {
-  //     await db.Task.findAll().then((task) => {
-  //       // res.json(dbtask)
-  //       console.log(task);
-  //       let dbtaskObject = {
-  //         task: task
-  //       }
-  //       // console.log("routes object " + JSON.stringify(dbtaskObject.task[0]));
-  //       // console.log("routes object " + JSON.stringify(dbtask[0]))
-  //       res.render('index', {
-  //         tasks: task
-  //       });
-  //     });
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // })
+
 
 
 };

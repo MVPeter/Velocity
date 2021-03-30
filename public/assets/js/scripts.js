@@ -36,7 +36,7 @@ $(document).ready(() => {
         }).then((response) => response.json())
             .then((foodDB) => {
                 allFood = foodDB
-                console.log(allFood);
+                console.log(foodDB);
             })
     }
     getFoodData()
