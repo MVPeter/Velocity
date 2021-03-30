@@ -6,6 +6,7 @@ const Handlebars = require('handlebars');
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+// const { DataTypes } = require("sequelize/types");
 
 module.exports = function (app) {
   app.get("/", (req, res) => {
@@ -30,12 +31,16 @@ module.exports = function (app) {
   //   app.get("/members", isAuthenticated, (req, res) => {
   //     res.sendFile(path.join(__dirname, "../public/members.html"));
   //   });
+  // where: {user_id: currentUserId, dayOf: taskDayEl} 
 
   app.get("/landing", isAuthenticated, (req, res) => {
-
-
-    db.Task.findAll({ where: {dayOf: "Monday"} }).then((task) => {
-
+    // let taskDayEl = document.getElementById('task-day');
+    // let currentUserId = data.id;
+    // console.log(currentUserId);
+    console.log(isAuthenticated);
+    console.log(req.user);
+    db.Task.findAll({where: {user_id: req.user.id}}).then((task) => {
+      
       res.render('index', {
         tasks: task
       })
