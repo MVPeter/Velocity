@@ -10,14 +10,13 @@ module.exports = (app) => {
     app.get('/api/meal', (req, res) => {
 
     });
-    app.get('/api/food', (req, res) => {
-        db.Food.findaAll().then(food => {
-            console.log("All Food: ", JSON.stringify(food, null, 4))
-        }).then((dbFood) => {
-            res.json(dbFood);
-        });
 
+    app.get('/api/food', (req, res) => {
+        db.Food.findAll().then((dbFood) => res.json(dbFood));
+        // console.log(dbFood[0].food);
     });
+
+
 
     // Route for logging user out
     app.get("/logout", (req, res) => {
@@ -110,10 +109,11 @@ module.exports = (app) => {
             status = false;
         }
         db.Task.update(
-            {task_complete: status},
-            {where: 
-            {id: req.params.id},
-        }
+            { task_complete: status },
+            {
+                where:
+                    { id: req.params.id },
+            }
         ).then((dbTask) => res.json(dbTask))
     })
 
