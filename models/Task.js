@@ -21,5 +21,8 @@ module.exports = (sequelize, DataTypes) => {
             modelName: 'Task',
         }
     );
+    Task.associate = (models) => {
+        models.Task.belongsTo(models.User, { foreignKey: "user_id" })
+    }
     return Task;
 };

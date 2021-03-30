@@ -27,8 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     }
     );
     Food.associate = (models) => {
-        models.Food.hasMany(models.Meal, { foreignKey: "food_id" })
+        models.Food.hasMany(models.Meal, { foreignKey: "food_id"})
         
-      }
+    }
+        
+      
     return Food;
 };
