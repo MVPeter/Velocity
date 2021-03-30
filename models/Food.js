@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
 
     };
     Food.init({
-        meal: DataTypes.STRING,
+        food: DataTypes.STRING,
         description: DataTypes.STRING,
         serving_size: DataTypes.STRING,
         // THESE WILL NEED TO BE DECIMAL

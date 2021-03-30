@@ -8,8 +8,9 @@ let taskDayEl = document.getElementById('task-day')
 let addFoodButton = document.getElementById('addFoodBtn');
 let mealTypeEl = document.getElementById('meal-type');
 let foodEl = document.getElementById('food');
-let mealDayEl = document.getElementById('meal-day')
-let currentUserId = ""
+let mealDayEl = document.getElementById('meal-day');
+let currentUserId = "";
+let allFood = "";
 
 
 // $(document).ready(() => {
@@ -21,24 +22,32 @@ let currentUserId = ""
 //         // res.render('index', tasksObject);
 //     })
 $(document).ready(() => {
+    // $.get("/api/food").then((response) => response.json())
+    // .then((fooddb) => {
+    //     allFood = fooddb.food;
+    //     console.log(allFood);
+    // })
     const getFoodData = () => {
         fetch("/api/food", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
-        }).then((response) => response.JSON())
-            .then((data) => {
-                console.log(data);
+        }).then((response) => response.json())
+            .then((foodDB) => {
+                allFood = foodDB
+                console.log(allFood);
             })
     }
+    getFoodData()
+
 
     $.get("/api/user_data").then(data => {
         console.log(data.email);
         console.log("user_id:  " + data.id)
         currentUserId = data.id
-      });
-    
+    });
+
 
 
 })
@@ -84,14 +93,14 @@ function submitTask() {
     location.reload()
 }
 
-$(".taskbutton").on("click", function(event) {
+$(".taskbutton").on("click", function (event) {
     event.preventDefault()
     let buttonId = $(this).data("id")
     let taskStatus = $(this).data("taskcomplete")
     console.log(buttonId + "   " + taskStatus)
     $.ajax("/api/completetask/" + buttonId, {
         type: "PUT",
-        data: {"task_complete": taskStatus}
+        data: { "task_complete": taskStatus }
     }).then(
         () => {
             console.log("completed")
@@ -107,7 +116,7 @@ function submitMeal() {
     let newMealType = mealTypeEl.value;
     let newMealFood = foodEl.value;
     let newMealDay = mealDayEl.value;
-     // Alert user if inputs are left blank
+    // Alert user if inputs are left blank
     if (!newMealType || !newMealFood || !newMealDay) {
         alert('Your meal is missing some information.');
     }
