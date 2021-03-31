@@ -113,14 +113,23 @@ function submitMeal() {
         user_id: currentUserId
     }
 
+    let mealID = parseInt(newMeal.food_id)
+    let foundFood = allFood.find(food => food.id === mealID);
     switch (newMeal.mealTime) {
+
         case "Breakfast":
-            let mealID = parseInt(newMeal.food_id)
-            let foundFood = allFood.find(food => food.id === mealID);
-            console.log(foundFood);
-            console.log(newMeal.food_id);
-            console.log(allFood);
-            $("#mealBreakfast").text(foundFood.food)
+            $("#mealBreakfast").append(`<li> ${foundFood.food} </li>`)
+            break;
+        case "Lunch":
+            $("#mealLunch").append(`<li> ${foundFood.food}</li>`)
+            break;
+        case "Dinner":
+            $("#mealDinner").append(`<li> ${foundFood.food}</li>`)
+            break;
+        case "Snack":
+            $("#mealSnack").append(`<li> ${foundFood.food}</li>`)
+            break;
+
     }
 
     console.log('submitMeal -> newMeal', newMeal);
