@@ -41,6 +41,7 @@ $(document).ready(() => {
                 // Populate food dropdown with the food from the database
                 for(i=0; i< allFood.length; i++){
                     let foodListEl = document.createElement("option");
+                    foodListEl.value = allFood[i].id;
                     foodListEl.textContent = allFood[i].food;
                     foodEl.append(foodListEl)
                 }
@@ -112,8 +113,7 @@ function submitMeal() {
     const newMeal = {
         dayOf: newMealDay.trim(),
         mealTime: newMealType.trim(),
-        // Hard coded post to always be food_id 11 'Apple' and user_id 1
-        food_id: 11,
+        food_id: foodEl.value,
         user_id: currentUserId
     }
     console.log('submitMeal -> newMeal', newMeal);
