@@ -34,6 +34,7 @@ $(document).ready(() => {
                 // Populate food dropdown with the food from the database
                 for(i=0; i< allFood.length; i++){
                     let foodListEl = document.createElement("option");
+                    foodListEl.value = allFood[i].id;
                     foodListEl.textContent = allFood[i].food;
                     foodEl.append(foodListEl)
                 }
@@ -57,9 +58,9 @@ function submitTask() {
     let newTaskText = taskTextEl.value;
     // let newTaskDay = taskDayEl.value;
     // Alert user if inputs are left blank
-    // if (!newTaskName || !newTaskText || !newTaskDay) {
-    //     alert('Your task is missing some information.');
-    // }
+    if (!newTaskName || !newTaskText) {
+        alert('Your task is missing some information.');
+    }
     // Create a newTask object to send off to the backend
     const newTask = {
         task_name: newTaskName.trim(),
@@ -98,15 +99,14 @@ function submitMeal() {
     let newMealFood = foodEl.value;
     // let newMealDay = mealDayEl.value;
     // Alert user if inputs are left blank
-    // if (!newMealType || !newMealFood || !newMealDay) {
-    //     alert('Your meal is missing some information.');
-    // }
+    if (!newMealType || !newMealFood) {
+        alert('Your meal is missing some information.');
+    }
     // Create a newMeal object to send off to the backend
     const newMeal = {
         // dayOf: newMealDay.trim(),
         mealTime: newMealType.trim(),
-        // Hard coded post to always be food_id 11 'Apple' and user_id 1
-        food_id: 11,
+        food_id: foodEl.value,
         user_id: currentUserId
     }
     console.log('submitMeal -> newMeal', newMeal);

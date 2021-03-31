@@ -1,6 +1,11 @@
-<li>
-    <p>{{id}}. {{task_name}}     Note: {{task_notes}}</p>
-    <button data-id="{{id}}" data-taskcomplete="{{task_complete}}" class="taskbutton">
-       {{#if task_complete}} Undo {{else}} Complete {{/if}}
-    </button>
-</li>
+<div class="card col-md-12 px-0">
+    <div class="card-header">
+        <h3 style="display:inline;">{{id}}. {{task_name}}</h3>
+        <button data-id="{{id}}" data-taskcomplete="{{task_complete}}" class="taskbutton float-right">
+            {{#if task_complete}} Undo {{else}} Complete {{/if}}
+        </button>
+    </div>
+    <div class="card-body">
+        <p>Notes: {{task_notes}}</p>
+    </div>
+</div>
