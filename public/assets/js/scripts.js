@@ -26,6 +26,9 @@ $(document).ready(() => {
     //     allFood = fooddb.food;
     //     console.log(allFood);
     // })
+    // function populateDd () {
+        
+    // }
     const getFoodData = () => {
         fetch("/api/food", {
             method: 'GET',
@@ -35,10 +38,16 @@ $(document).ready(() => {
         }).then((response) => response.json())
             .then((foodDB) => {
                 allFood = foodDB
-                console.log(foodDB);
+                // Populate food dropdown with the food from the database
+                for(i=0; i< allFood.length; i++){
+                    let foodListEl = document.createElement("option");
+                    foodListEl.textContent = allFood[i].food;
+                    foodEl.append(foodListEl)
+                }
             })
     }
     getFoodData()
+    
 
 
     $.get("/api/user_data").then(data => {
@@ -104,8 +113,8 @@ function submitMeal() {
         dayOf: newMealDay.trim(),
         mealTime: newMealType.trim(),
         // Hard coded post to always be food_id 11 'Apple' and user_id 1
-        food_id: 11,
-        user_id: 1
+        food_id: ,
+        user_id: currentUserId
     }
     console.log('submitMeal -> newMeal', newMeal);
     submitPost(newMeal, submitType);
