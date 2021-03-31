@@ -12,14 +12,7 @@ let mealDayEl = document.getElementById('meal-day');
 let currentUserId = "";
 let allFood = "";
 
-// $(document).ready(() => {
-//     $.get("/api/tasks").then(data => {
-//         const tasksObject = {
-//             tasks: data,
-//         };
-//         console.log(tasksObject);
-//         // res.render('index', tasksObject);
-//     })
+
 $(document).ready(() => {
     // $.get("/api/food").then((response) => response.json())
     // .then((fooddb) => {
@@ -63,16 +56,16 @@ function submitTask() {
     // Task values entered by user
     let newTaskName = taskNameEl.value;
     let newTaskText = taskTextEl.value;
-    let newTaskDay = taskDayEl.value;
+    // let newTaskDay = taskDayEl.value;
     // Alert user if inputs are left blank
-    if (!newTaskName || !newTaskText || !newTaskDay) {
-        alert('Your task is missing some information.');
-    }
+    // if (!newTaskName || !newTaskText || !newTaskDay) {
+    //     alert('Your task is missing some information.');
+    // }
     // Create a newTask object to send off to the backend
     const newTask = {
         task_name: newTaskName.trim(),
         task_notes: newTaskText.trim(),
-        dayOf: newTaskDay.trim(),
+        // dayOf: newTaskDay.trim(),
         user_id: currentUserId
     }
     console.log('submitTask -> newTask', newTask);
@@ -104,14 +97,14 @@ function submitMeal() {
     // Task values entered by user
     let newMealType = mealTypeEl.value;
     let newMealFood = foodEl.value;
-    let newMealDay = mealDayEl.value;
+    // let newMealDay = mealDayEl.value;
     // Alert user if inputs are left blank
-    if (!newMealType || !newMealFood || !newMealDay) {
-        alert('Your meal is missing some information.');
-    }
+    // if (!newMealType || !newMealFood || !newMealDay) {
+    //     alert('Your meal is missing some information.');
+    // }
     // Create a newMeal object to send off to the backend
     const newMeal = {
-        dayOf: newMealDay.trim(),
+        // dayOf: newMealDay.trim(),
         mealTime: newMealType.trim(),
         food_id: foodEl.value,
         user_id: currentUserId
