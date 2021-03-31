@@ -5,13 +5,16 @@ form.login {
 
 .taskbutton {
   font-size: 10px;
-  background-color: rgb(255, 145, 0);
+  font-weight: bold;
+  color: white;
+  background-color: #26726C;
   border-radius: 12px;
+ 
 }
 
 .vel-text {
   font-family: Roboto;
-  color: #526997;
+  color: #314A7B;
   font-weight: bold;
 }
 

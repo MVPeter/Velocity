@@ -58,9 +58,9 @@ function submitTask() {
     let newTaskText = taskTextEl.value;
     // let newTaskDay = taskDayEl.value;
     // Alert user if inputs are left blank
-    // if (!newTaskName || !newTaskText || !newTaskDay) {
-    //     alert('Your task is missing some information.');
-    // }
+    if (!newTaskName || !newTaskText) {
+        alert('Your task is missing some information.');
+    }
     // Create a newTask object to send off to the backend
     const newTask = {
         task_name: newTaskName.trim(),
@@ -99,9 +99,9 @@ function submitMeal() {
     let newMealFood = foodEl.value;
     // let newMealDay = mealDayEl.value;
     // Alert user if inputs are left blank
-    // if (!newMealType || !newMealFood || !newMealDay) {
-    //     alert('Your meal is missing some information.');
-    // }
+    if (!newMealType || !newMealFood) {
+        alert('Your meal is missing some information.');
+    }
     // Create a newMeal object to send off to the backend
     const newMeal = {
         // dayOf: newMealDay.trim(),
