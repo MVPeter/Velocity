@@ -12,7 +12,6 @@ let mealDayEl = document.getElementById('meal-day');
 let currentUserId = "";
 let allFood = "";
 
-
 // $(document).ready(() => {
 //     $.get("/api/tasks").then(data => {
 //         const tasksObject = {
@@ -27,6 +26,9 @@ $(document).ready(() => {
     //     allFood = fooddb.food;
     //     console.log(allFood);
     // })
+    // function populateDd () {
+        
+    // }
     const getFoodData = () => {
         fetch("/api/food", {
             method: 'GET',
@@ -36,10 +38,16 @@ $(document).ready(() => {
         }).then((response) => response.json())
             .then((foodDB) => {
                 allFood = foodDB
-                console.log(foodDB);
+                // Populate food dropdown with the food from the database
+                for(i=0; i< allFood.length; i++){
+                    let foodListEl = document.createElement("option");
+                    foodListEl.textContent = allFood[i].food;
+                    foodEl.append(foodListEl)
+                }
             })
     }
     getFoodData()
+    
 
 
     $.get("/api/user_data").then(data => {
@@ -47,9 +55,6 @@ $(document).ready(() => {
         console.log("user_id:  " + data.id)
         currentUserId = data.id
     });
-
-
-
 })
 
 function submitTask() {
@@ -71,23 +76,6 @@ function submitTask() {
     }
     console.log('submitTask -> newTask', newTask);
     submitPost(newTask, submitType);
-    // // Create new list element, input checkbox, and delete button
-    // let newTaskRow = document.createElement("li");
-    // newTaskRow.textContent = newTaskName; 
-    // let newTaskInput = document.createElement("input");
-    // newTaskInput.setAttribute("type", "checkbox");
-    // let delBtn = document.createElement('i');
-    // delBtn.classList.add(
-    //   'fas',
-    //   'fa-trash-alt',
-    //   'float-right',
-    //   'text-danger',
-    //   'delete-task'
-    // );
-    // newTaskRow.prepend(newTaskInput);
-    // newTaskRow.append(delBtn);
-    // document.getElementById("tasks").append(newTaskRow);
-
     taskNameEl.value = "";
     taskTextEl.value = "";
     location.reload()
@@ -126,7 +114,7 @@ function submitMeal() {
         mealTime: newMealType.trim(),
         // Hard coded post to always be food_id 11 'Apple' and user_id 1
         food_id: 11,
-        user_id: 1
+        user_id: currentUserId
     }
     console.log('submitMeal -> newMeal', newMeal);
     submitPost(newMeal, submitType);
