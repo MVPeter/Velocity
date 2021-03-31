@@ -12,14 +12,7 @@ let mealDayEl = document.getElementById('meal-day');
 let currentUserId = "";
 let allFood = "";
 
-// $(document).ready(() => {
-//     $.get("/api/tasks").then(data => {
-//         const tasksObject = {
-//             tasks: data,
-//         };
-//         console.log(tasksObject);
-//         // res.render('index', tasksObject);
-//     })
+
 $(document).ready(() => {
     // $.get("/api/food").then((response) => response.json())
     // .then((fooddb) => {
@@ -62,11 +55,11 @@ function submitTask() {
     // Task values entered by user
     let newTaskName = taskNameEl.value;
     let newTaskText = taskTextEl.value;
-    let newTaskDay = taskDayEl.value;
+    // let newTaskDay = taskDayEl.value;
     // Alert user if inputs are left blank
-    if (!newTaskName || !newTaskText || !newTaskDay) {
-        alert('Your task is missing some information.');
-    }
+    // if (!newTaskName || !newTaskText || !newTaskDay) {
+    //     alert('Your task is missing some information.');
+    // }
     // Create a newTask object to send off to the backend
     const newTask = {
         task_name: newTaskName.trim(),
