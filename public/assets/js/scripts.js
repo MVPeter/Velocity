@@ -10,7 +10,7 @@ let mealTypeEl = document.getElementById('meal-type');
 let foodEl = document.getElementById('food');
 let mealDayEl = document.getElementById('meal-day');
 let currentUserId = "";
-let allFood = "";
+let allFood = "FISH AND TACOS BUT NOT FISH TACOS";
 
 
 $(document).ready(() => {
@@ -20,7 +20,7 @@ $(document).ready(() => {
     //     console.log(allFood);
     // })
     // function populateDd () {
-        
+
     // }
     const getFoodData = () => {
         fetch("/api/food", {
@@ -31,8 +31,9 @@ $(document).ready(() => {
         }).then((response) => response.json())
             .then((foodDB) => {
                 allFood = foodDB
+
                 // Populate food dropdown with the food from the database
-                for(i=0; i< allFood.length; i++){
+                for (i = 0; i < allFood.length; i++) {
                     let foodListEl = document.createElement("option");
                     foodListEl.value = allFood[i].id;
                     foodListEl.textContent = allFood[i].food;
@@ -41,7 +42,7 @@ $(document).ready(() => {
             })
     }
     getFoodData()
-    
+
 
 
     $.get("/api/user_data").then(data => {
@@ -49,7 +50,9 @@ $(document).ready(() => {
         console.log("user_id:  " + data.id)
         currentUserId = data.id
     });
+
 })
+
 
 function submitTask() {
     let submitType = 'newTask';
@@ -109,6 +112,17 @@ function submitMeal() {
         food_id: foodEl.value,
         user_id: currentUserId
     }
+
+    switch (newMeal.mealTime) {
+        case "Breakfast":
+            let mealID = parseInt(newMeal.food_id)
+            let foundFood = allFood.find(food => food.id === mealID);
+            console.log(foundFood);
+            console.log(newMeal.food_id);
+            console.log(allFood);
+            $("#mealBreakfast").text(foundFood.food)
+    }
+
     console.log('submitMeal -> newMeal', newMeal);
     submitPost(newMeal, submitType);
 }
