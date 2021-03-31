@@ -19,3 +19,7 @@ form.login {
   background-color: #135e58;
   color: white;
 }
+
+.navbar-right {
+  margin-left: auto;
+}

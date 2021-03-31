@@ -7,7 +7,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav">
-      <li class="nav-item">
+      {{!-- <li class="nav-item">
         <a class="nav-link" href="/landing/monday">Monday</a>
       </li>
       <li class="nav-item">
@@ -27,7 +27,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/landing/Sunday">Sunday</a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="/logout">Log Out</a>
       </li>
@@ -43,7 +43,7 @@
           <div class="form-group">
             <input id="task-name" class="form-control" data-taskName="taskName" placeholder="Task Title" type="text">
             <textarea id="task-text" class="form-control" placeholder="Task Text"></textarea>
-            <select class="custom-select" id="task-day">
+            {{!-- <select class="custom-select" id="task-day">
               <option selected disabled value="">Task Day</option>
               <option>Monday</option>
               <option>Tuesday</option>
@@ -52,7 +52,7 @@
               <option>Friday</option>
               <option>Saturday</option>
               <option>Sunday</option>
-            </select>
+            </select> --}}
           </div>
           <button type="button" class="btn btn-outline-secondary" id="addTaskBtn">Add Task</button>
         </div>
@@ -67,13 +67,10 @@
                 <ul>
                   {{#each tasks}}
                   {{#dataValues}}
-                  {{#Tasks}} 
-                  {{#each task}}
-                  {{#unless Tasks.task_complete}}
+                  {{#unless task_complete}}
                   {{> taskstatus/taskstatus task_complete=false}}
                   {{/unless}}
-                  {{/each}}
-                  {{/Tasks}}
+                                   
                   {{/dataValues}}
                   {{/each}}
                 </ul>
@@ -124,7 +121,7 @@
               <option>Pizza</option>
               <option>Chocolate</option>
             </select>
-            <select class="custom-select" id="meal-day">
+            {{!-- <select class="custom-select" id="meal-day">
               <option selected disabled value="">Task Day</option>
               <option>Monday</option>
               <option>Tuesday</option>
@@ -133,7 +130,7 @@
               <option>Friday</option>
               <option>Saturday</option>
               <option>Sunday</option>
-            </select>
+            </select> --}}
           </div>
           <button type="button" class="btn btn-outline-secondary" id="addFoodBtn">Add Food</button>
         </div>
