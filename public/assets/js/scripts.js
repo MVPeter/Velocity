@@ -71,7 +71,7 @@ function submitTask() {
     const newTask = {
         task_name: newTaskName.trim(),
         task_notes: newTaskText.trim(),
-        dayOf: newTaskDay.trim(),
+        // dayOf: newTaskDay.trim(),
         user_id: currentUserId
     }
     console.log('submitTask -> newTask', newTask);
@@ -103,14 +103,14 @@ function submitMeal() {
     // Task values entered by user
     let newMealType = mealTypeEl.value;
     let newMealFood = foodEl.value;
-    let newMealDay = mealDayEl.value;
+    // let newMealDay = mealDayEl.value;
     // Alert user if inputs are left blank
-    if (!newMealType || !newMealFood || !newMealDay) {
-        alert('Your meal is missing some information.');
-    }
+    // if (!newMealType || !newMealFood || !newMealDay) {
+    //     alert('Your meal is missing some information.');
+    // }
     // Create a newMeal object to send off to the backend
     const newMeal = {
-        dayOf: newMealDay.trim(),
+        // dayOf: newMealDay.trim(),
         mealTime: newMealType.trim(),
         // Hard coded post to always be food_id 11 'Apple' and user_id 1
         food_id: 11,

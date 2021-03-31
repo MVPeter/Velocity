@@ -72,8 +72,14 @@ module.exports = function (app) {
     // };
     // console.log("This is DB data: " + dbUserObject);
     
-    res.render("index", {tasks : user});
-    console.log(user)
+    res.render("index", {
+      tasks : user[0].Tasks,
+      meals : user[0].Meals,
+      foods : user[0].Meals[0].Food
+    });
+    // console.log(user[0].Tasks)
+    console.log(user[0].Meals)
+    console.log(user[0].Meals[0].Food)
     
   })
       // res.render('index', {
