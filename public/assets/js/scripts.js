@@ -12,7 +12,6 @@ let mealDayEl = document.getElementById('meal-day');
 let currentUserId = "";
 let allFood = "";
 
-
 // $(document).ready(() => {
 //     $.get("/api/tasks").then(data => {
 //         const tasksObject = {
@@ -47,9 +46,6 @@ $(document).ready(() => {
         console.log("user_id:  " + data.id)
         currentUserId = data.id
     });
-
-
-
 })
 
 function submitTask() {
@@ -71,23 +67,6 @@ function submitTask() {
     }
     console.log('submitTask -> newTask', newTask);
     submitPost(newTask, submitType);
-    // // Create new list element, input checkbox, and delete button
-    // let newTaskRow = document.createElement("li");
-    // newTaskRow.textContent = newTaskName; 
-    // let newTaskInput = document.createElement("input");
-    // newTaskInput.setAttribute("type", "checkbox");
-    // let delBtn = document.createElement('i');
-    // delBtn.classList.add(
-    //   'fas',
-    //   'fa-trash-alt',
-    //   'float-right',
-    //   'text-danger',
-    //   'delete-task'
-    // );
-    // newTaskRow.prepend(newTaskInput);
-    // newTaskRow.append(delBtn);
-    // document.getElementById("tasks").append(newTaskRow);
-
     taskNameEl.value = "";
     taskTextEl.value = "";
     location.reload()
