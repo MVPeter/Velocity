@@ -14,14 +14,7 @@ let allFood = "FISH AND TACOS BUT NOT FISH TACOS";
 
 
 $(document).ready(() => {
-    // $.get("/api/food").then((response) => response.json())
-    // .then((fooddb) => {
-    //     allFood = fooddb.food;
-    //     console.log(allFood);
-    // })
-    // function populateDd () {
 
-    // }
     const getFoodData = () => {
         fetch("/api/food", {
             method: 'GET',

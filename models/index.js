@@ -8,15 +8,6 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-// const User = require("./user")
-// const Task = require("./task")
-// const Meal = require("./meal")
-// const Food = require("./food")
-
-
-// User.hasMany(Tasks, {foreignKey: "user_id"})
-// User.hasMany(Meal, {foreignKey: "user_id"})
-
 let sequelize;
 if (config.use_env_variable) {
   console.log(process.env[config.use_env_variable])
