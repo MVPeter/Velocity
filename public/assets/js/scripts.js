@@ -43,6 +43,41 @@ $(document).ready(() => {
     }
     getFoodData()
 
+    const getMealData = () => {
+        fetch("/api/meal", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((response) => response.json())
+            .then((mealDB) => {
+                allMeals = mealDB;
+                console.log(allMeals)
+
+                for (i = 0; i < allMeals.length; i++) {
+                    let mealID = parseInt(allMeals[i].food_id)
+                    let foundFood = allFood.find(food => food.id === mealID);
+                    switch (allMeals[i].mealTime) {
+                
+                        case "Breakfast":
+                            $("#mealBreakfast").append(`<li> ${foundFood.food} </li>`)
+                            break;
+                        case "Lunch":
+                            $("#mealLunch").append(`<li> ${foundFood.food}</li>`)
+                            break;
+                        case "Dinner":
+                            $("#mealDinner").append(`<li> ${foundFood.food}</li>`)
+                            break;
+                        case "Snack":
+                            $("#mealSnack").append(`<li> ${foundFood.food}</li>`)
+                            break;
+                
+                    }
+                }
+            })
+    }
+    getMealData()
+
 
 
     $.get("/api/user_data").then(data => {
