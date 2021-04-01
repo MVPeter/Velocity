@@ -8,7 +8,7 @@ module.exports = (app) => {
 
 
     app.get('/api/meal', (req, res) => {
-
+        db.Meal.findAll().then((dbMeal) => res.json(dbMeal));
     });
 
     app.get('/api/food', (req, res) => {
